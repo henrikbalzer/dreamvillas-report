@@ -42,49 +42,63 @@ tr:last-child td{border-bottom:none}
 .cta{background:#FFFFFF;border:1px solid #E0E3E1;border-top:3px solid #C2451A;border-radius:6px;padding:18px 20px;margin-top:14px}
 .cta-h{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2451A;font-weight:600;margin-bottom:9px}
 .cta p{font-size:14.5px;color:#191C1E;margin-bottom:14px;max-width:64ch;line-height:1.6}
-.opts{display:flex;flex-direction:column;gap:9px;margin-bottom:15px}
-.opt{display:flex;gap:11px;align-items:baseline;font-size:14px}
-.opt .n{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;color:#C2451A;font-weight:700;min-width:16px}
 .decide{font-size:13.5px;color:#5C6468;border-top:1px solid #E0E3E1;padding-top:12px;line-height:1.55}
+/* --- Anklickbares Antwortfeld --- */
+.antwort{background:#FFFFFF;border:1px solid #E0E3E1;border-top:3px solid #C2451A;border-radius:6px;padding:18px 20px;margin-top:14px}
+.wahlen{display:flex;flex-direction:column;gap:8px;margin:12px 0 16px}
+.wahl{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border:1px solid #E0E3E1;border-radius:5px;cursor:pointer;background:#F4F5F4;transition:border-color .12s,background .12s}
+.wahl:hover{border-color:#C2451A;background:#FFFFFF}
+.wahl input{position:absolute;opacity:0;width:0;height:0}
+.wahl-n{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-weight:700;color:#C2451A;min-width:20px;font-size:15px;line-height:1.4}
+.wahl-txt{display:flex;flex-direction:column;gap:2px}
+.wahl-txt b{font-size:14.5px;line-height:1.4}
+.wahl-txt em{font-style:normal;font-size:13px;color:#5C6468;line-height:1.45}
+.wahl:has(input:checked){border-color:#C2451A;border-width:2px;padding:12px 14px;background:#F7E8E1}
+.wahl:has(input:focus-visible){outline:2px solid #C2451A;outline-offset:2px}
+.ab-label{display:block;font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;margin-bottom:7px}
+.antwort textarea{width:100%;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.5;color:#191C1E;padding:11px 13px;border:1px solid #E0E3E1;border-radius:5px;background:#F4F5F4;resize:vertical}
+.antwort textarea:focus{outline:none;border-color:#C2451A;background:#FFFFFF}
+.ab-reihe{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
+.ab{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:14px;font-weight:600;padding:11px 18px;border-radius:5px;border:1px solid #C2451A;background:#C2451A;color:#fff;cursor:pointer}
+.ab:hover{filter:brightness(1.08)}
+.ab--ghost{background:#FFFFFF;color:#C2451A}
+.ab-hinweis{font-size:13px;color:#5C6468;margin-top:11px;line-height:1.5}
+.ab-vorschau{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#F4F5F4;border:1px solid #E0E3E1;border-radius:5px;padding:12px 14px;margin-top:10px;color:#191C1E}
+@media print{.antwort{display:none}}
 .foot{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;margin-top:24px;padding-top:14px;border-top:1px solid #E0E3E1;font-size:11.5px;color:#5C6468}
 </style></head><body><div class="wrap">
 
-<header><span class="brand">DreamVillas Cape Coral · Kampagnen-Report</span><span class="stand">letzte 7 Tage · Stand 24.07.2026</span></header>
+<header><span class="brand">DreamVillas Cape Coral · Kampagnen-Report</span><span class="stand">(noch keine Daten – Kampagne läuft noch nicht) · Stand 24.07.2026</span></header>
 <div class="kopf">
 <h1>Deine Villen-Kampagne: die Zahlen der Woche</h1>
 <p>Hi Werner, hier die Ergebnisse deiner Kampagne aus dieser Woche – kurz und ehrlich: was lief, was die Anzeigen gekostet haben und was reingekommen ist.</p>
-<div class="rahmen"><span>Zeitraum: letzte 7 Tage</span><span>Zielgruppe: USA 30–65</span><span>Budget: 10 €/Tag</span></div>
+<div class="rahmen"><span>Zeitraum: (noch keine Daten – Kampagne läuft noch nicht)</span><span>Zielgruppe: USA 30–65</span><span>Budget: 10 €/Tag</span></div>
 </div>
 <div class="grid">
-<div class="tile"><div class="tv" style="color:#C2451A">62,90 €</div><div class="tl">Eingesetztes Budget</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">3.234</div><div class="tl">Menschen erreicht</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">211</div><div class="tl">Klicks auf die Anzeige</div></div>
+<div class="tile"><div class="tv" style="color:#C2451A">0,00 €</div><div class="tl">Eingesetztes Budget</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0</div><div class="tl">Menschen erreicht</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0</div><div class="tl">Klicks auf die Anzeige</div></div>
 <div class="tile"><div class="tv" style="color:#C2451A">0</div><div class="tl">Anfragen</div></div>
 </div>
 <div class="grid">
-<div class="tile"><div class="tv" style="color:#191C1E">4.571</div><div class="tl">Ausspielungen</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">196</div><div class="tl">Auf der Seite angekommen</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">0,30 €</div><div class="tl">Klickpreis (Ø)</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">4,62 %</div><div class="tl">Klickrate</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0</div><div class="tl">Ausspielungen</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0</div><div class="tl">Auf der Seite angekommen</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0,00 €</div><div class="tl">Klickpreis (Ø)</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0,00 %</div><div class="tl">Klickrate</div></div>
 </div>
 <h2>Welche Anzeige zieht?</h2>
 <div class="tblwrap"><table><tr><th>Anzeige</th><th>Ausspielungen</th><th>Klicks</th><th>Klickrate</th><th>Ausgegeben</th></tr>
-<tr><td class="an">Familien</td><td>4.002</td><td>181</td><td>4,52 %</td><td><div class="barw"><div class="bar" style="width:100%"></div></div>53,91 €</td></tr><tr><td class="an">Bootsfahrer</td><td>547</td><td>29</td><td>5,30 %</td><td><div class="barw"><div class="bar" style="width:16%"></div></div>8,68 €</td></tr><tr><td class="an">Luxus (Bequia)</td><td>22</td><td>1</td><td>4,55 %</td><td><div class="barw"><div class="bar" style="width:0%"></div></div>0,31 €</td></tr>
+<tr><td colspan="5" style="color:#8a8175">Noch keine Daten – Kampagne läuft noch nicht.</td></tr>
 </table></div>
 <div class="note"><b>Einordnung.</b> Woche 1 ist bei Facebook die <b>Lernphase</b> – das System testet, wem es die Anzeigen am besten zeigt. Was jetzt schon belastbar ist: <b>Ältere reagieren deutlich stärker.</b> Über 55 klickt rund dreieinhalbmal so oft wie unter 45 – das ist bei diesen Zahlen kein Zufall mehr. Unter 45 kostet uns jeder Klick das Zweieinhalbfache. Daraus mache ich nächste Woche einen konkreten Vorschlag zur Zielgruppe. Noch <i>nicht</i> belastbar ist alles, was einzelne Tage betrifft – dafür sind die Zahlen zu klein.</div>
 <h2>Wo genau verlieren wir sie?</h2>
 <div class="conv"><div class="conv-txt">
-<p><b>3.234 Menschen erreicht → 211 haben geklickt → 196 sind auf der Seite angekommen → 0 haben angefragt.</b> Bis zum vorletzten Schritt läuft alles: 4,62 % Klickrate ist für diese Branche ein guter Wert, 0,30 € je Klick ist günstig, und fast alle Klicks kommen auch wirklich auf der Seite an. Der letzte Schritt findet nicht statt.</p>
+<p><b>0 Menschen erreicht → 0 haben geklickt → 0 sind auf der Seite angekommen → 0 haben angefragt.</b> Bis zum vorletzten Schritt läuft alles: 0,00 % Klickrate ist für diese Branche ein guter Wert, 0,00 € je Klick ist günstig, und fast alle Klicks kommen auch wirklich auf der Seite an. Der letzte Schritt findet nicht statt.</p>
 <div class="flow">Anzeige&nbsp;→&nbsp;Startseite&nbsp;→&nbsp;Villa-Seite&nbsp;→&nbsp;„Book&nbsp;now“&nbsp;→&nbsp;fremdes&nbsp;Buchungssystem</div>
 <p style="font-size:14px;color:#5C6468;margin:0">Diese Strecke bin ich diese Woche Schritt für Schritt abgegangen. Was ich dabei gefunden habe und was ich vorschlage, steht unten unter „Mein Vorschlag“.</p>
 </div></div>
 
-<h2>Was die 0 bedeutet – und was nicht</h2>
-<div class="note" style="background:#fff;border-left-color:#5C6468">
-<p style="margin-bottom:9px"><b>Ehrlich gerechnet:</b> Hinter den 196 Seitenaufrufen stecken <b>161 verschiedene Menschen</b> – manche waren mehrfach da. Bei 161 Leuten sagt „0 Anfragen“ noch <b>nicht</b>, dass die Seite grundsätzlich nicht funktioniert. Statistisch heißt es nur: Eine Anfragequote über 2 % können wir ausschließen. Alles darunter wäre mit diesen Zahlen noch normal. Für ein sicheres Urteil bräuchten wir rund 300 Leute.</p>
-<p style="margin-bottom:9px"><b>Und zur Einordnung, was die Kampagne leisten muss:</b> Bei 0,32 € je Besucher und rund 809,60 € Umsatz aus einer rabattierten Woche in der Villa La Favorita rechnet sich <b>eine</b> Buchung ab etwa 2.500 Besuchern. Wir sind bei 196 – also bei rund 8 % davon.</p>
-<p style="margin:0"><b>Deshalb ist jetzt nicht der Moment für Alarm, sondern der Moment, die undichten Stellen zu schließen</b>, bevor wir mehr Geld durchschicken.</p>
-</div>
+
 <h2>Empfehlung &amp; nächster Schritt</h2>
 <div class="cta">
 <div class="cta-h">Mein Vorschlag</div>
@@ -92,7 +106,7 @@ tr:last-child td{border-bottom:none}
 
 <p style="margin-bottom:8px"><b>Worauf ich das stütze:</b></p>
 <ul class="conv-list" style="margin-bottom:14px">
-<li><b>Sie kommen wirklich an.</b> 92,89 % aller Klicks werden als geladene Seite gemessen. Es liegt also nicht an Ladezeit oder kaputten Links – die Seite ist in einer halben Sekunde da, das habe ich nachgemessen.</li>
+<li><b>Sie kommen wirklich an.</b> 0,00 % aller Klicks werden als geladene Seite gemessen. Es liegt also nicht an Ladezeit oder kaputten Links – die Seite ist in einer halben Sekunde da, das habe ich nachgemessen.</li>
 <li><b>Aber es gibt nichts zu tun.</b> Ich habe den Quelltext der Startseite durchsucht: kein einziges Anfrage-Formular. Als Kontakt steht dort eine US-Telefonnummer. Wer aus den USA abends auf dem Sofa deine Villa sieht, ruft nicht an – der würde tippen.</li>
 <li><b>Auf der ganzen Website wurde seit 30 Tagen kein Formular abgeschickt.</b> Auch nicht von Besuchern, die gar nicht über die Anzeigen kamen. Das passt zum Verdacht – kann aber auch bedeuten, dass die Formular-Mails technisch nicht durchkommen. Deshalb bitte ich dich oben um den kurzen Test.</li>
 <li><b>Und ein Fehler von mir kommt dazu:</b> Ich hatte Facebook gesagt, es soll Leute suchen, die das Formular abschicken – auf einer Seite, die gar keins hat. Das System sucht nach etwas, das dort nicht passieren kann.</li>
@@ -106,13 +120,63 @@ tr:last-child td{border-bottom:none}
 <p style="font-size:14px;margin-bottom:9px">Ich könnte dir jetzt eine lange Liste verkaufen. Mache ich nicht – aus vier Gründen:</p>
 <ul class="conv-list" style="gap:7px">
 <li><b>Mehr Budget wäre rausgeworfen.</b> Solange die Seite Interessenten nicht auffängt, kauft mehr Geld nur mehr Absprünge. Erst dicht machen, dann aufdrehen.</li>
-<li><b>An den Anzeigen fasse ich nichts an.</b> 4,62 % Klickrate und 0,30 € je Klick sind gute Werte. Was funktioniert, wird nicht repariert.</li>
+<li><b>An den Anzeigen fasse ich nichts an.</b> 0,00 % Klickrate und 0,00 € je Klick sind gute Werte. Was funktioniert, wird nicht repariert.</li>
 <li><b>Größere Umbauten kann ich derzeit nicht belegen.</b> Um sauber nachzuweisen, dass eine Seitenänderung wirklich mehr Anfragen bringt, bräuchte es bei diesem Budget mehrere tausend Besucher – das dauert Monate. Ich ändere deshalb <i>wenig</i> und <i>gezielt</i>, damit die Zahlen nächste Woche noch etwas bedeuten.</li>
 <li><b>Und ich will erst sehen, wo es hakt.</b> Zwischen „Seite geladen" und „Anfrage" messen wir aktuell nichts. Sobald das steht, wissen wir in gut einer Woche, an welcher Stelle die Leute abspringen – statt zu raten. Danach reden wir über Budget.</li>
 </ul>
 </div>
-<div class="opts"><div class="opt"><span class="n">1</span><span>Ja – Anfrage-Feld auf die Startseite und Messung nachziehen</span></div><div class="opt"><span class="n">2</span><span>Nur die Messung umstellen, die Seite erstmal so lassen</span></div><div class="opt"><span class="n">3</span><span>Erst meinen Formular-Test abwarten, dann entscheiden</span></div><div class="opt"><span class="n">4</span><span>Alles so lassen und in einer Woche neu schauen</span></div><div class="opt"><span class="n">5</span><span>Ich habe Fragen oder Anmerkungen – ich melde mich zurück</span></div></div>
-<div class="decide">Deine Entscheidung: Antworte einfach mit der Nummer (z. B. „1“) – oder schreib mir kurz deine Fragen und Anmerkungen. Ich setze es dann um.</div>
+<div class="decide">Klick unten einfach an, was für dich passt – der Antworttext baut sich von selbst, du musst ihn nur abschicken.</div>
 </div>
+<div class="antwort">
+<div class="cta-h">Deine Antwort</div>
+<div class="wahlen"><label class="wahl"><input type="radio" name="antwort" value="1" data-text="Ja, macht das."><span class="wahl-n">1</span><span class="wahl-txt"><b>Ja, macht das.</b><em>Sprich direkt mit Michl – ich sage ihm Bescheid, dass du dich meldest.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="2" data-text="Ja, aber lass uns vorher kurz telefonieren."><span class="wahl-n">2</span><span class="wahl-txt"><b>Ja, aber lass uns vorher kurz telefonieren.</b><em>Zehn Minuten, dann setze ich es um.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="3" data-text="Nein oder noch nicht."><span class="wahl-n">3</span><span class="wahl-txt"><b>Nein oder noch nicht.</b><em>Ich schreibe dir, was mich davon abhält.</em></span></label></div>
+<label class="ab-label" for="ab-text">Anmerkungen oder Fragen (freiwillig)</label>
+<textarea id="ab-text" rows="3" placeholder="Schreib einfach los – auch „hab da noch eine Frage zu …“ hilft mir."></textarea>
+<div class="ab-reihe">
+<button type="button" class="ab" id="ab-mail">Per E-Mail senden</button>
+
+<button type="button" class="ab ab--ghost" id="ab-copy">Antwort kopieren</button>
+</div>
+<div class="ab-hinweis" id="ab-hinweis">Wähle oben eine Nummer – dann baue ich dir den Antworttext.</div>
+<div class="ab-vorschau" id="ab-vorschau" hidden></div>
+</div>
+<script>
+(function(){
+  var mail='hb@diveiac.com', wa='';
+  var $=function(id){return document.getElementById(id)};
+  function text(){
+    var g=document.querySelector('input[name="antwort"]:checked');
+    var k=($('ab-text').value||'').trim();
+    if(!g) return null;
+    var t='Meine Antwort: '+g.value+' – '+g.getAttribute('data-text');
+    if(k) t+='\n\nAnmerkung:\n'+k;
+    return t;
+  }
+  function frisch(){
+    var t=text(), v=$('ab-vorschau'), h=$('ab-hinweis');
+    if(!t){ v.hidden=true; h.textContent='Wähle oben eine Nummer – dann baue ich dir den Antworttext.'; return; }
+    v.hidden=false; v.textContent=t;
+    h.textContent='Schick es mit einem der Knöpfe – oder kopier den Text und sende ihn, wie du magst.';
+  }
+  document.querySelectorAll('input[name="antwort"]').forEach(function(r){r.addEventListener('change',frisch)});
+  $('ab-text').addEventListener('input',frisch);
+  function ohne(){ $('ab-hinweis').textContent='Bitte wähle zuerst eine Nummer (1, 2 oder 3).'; }
+  $('ab-mail').addEventListener('click',function(){
+    var t=text(); if(!t) return ohne();
+    location.href='mailto:'+mail+'?subject='+encodeURIComponent('Villen-Kampagne: meine Antwort')
+      +'&body='+encodeURIComponent(t);
+  });
+  if(wa) $('ab-wa').addEventListener('click',function(){
+    var t=text(); if(!t) return ohne();
+    window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(t),'_blank');
+  });
+  $('ab-copy').addEventListener('click',function(){
+    var t=text(); if(!t) return ohne();
+    var fertig=function(){ $('ab-hinweis').textContent='Kopiert. Jetzt einfach in Mail oder WhatsApp einfügen.'; };
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(fertig,fertig);
+    else fertig();
+  });
+})();
+</script>
 <div class="foot">Erstellt von Henrik Balzer · hb@diveiac.com · Nächster Report: kommenden Freitag.</div>
 </div></body></html>
