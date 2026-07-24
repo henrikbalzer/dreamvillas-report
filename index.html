@@ -75,6 +75,8 @@ tr:last-child td{border-bottom:none}
 .ab:hover{filter:brightness(1.08)}
 .ab:disabled{opacity:.6;cursor:default}
 .ab-hinweis{font-size:13px;color:#5C6468;margin-top:11px;line-height:1.5}
+.ab-rueckfall{background:#F4F5F4;border:1px solid #E0E3E1;border-left:3px solid #C2451A;border-radius:4px;padding:14px 16px;margin-top:12px;font-size:14px;line-height:1.55}
+.ab-rtext{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#FFFFFF;border:1px solid #E0E3E1;border-radius:4px;padding:11px 13px;margin-top:10px;user-select:all}
 .ab-danke{background:#F7E8E1;border-left:3px solid #C2451A;border-radius:4px;padding:14px 16px;margin-top:12px;font-size:14.5px;line-height:1.55;color:#4a3a33}
 @media print{.antwort{display:none}}
 .foot{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;margin-top:24px;padding-top:14px;border-top:1px solid #E0E3E1;font-size:11.5px;color:#5C6468}
@@ -159,6 +161,12 @@ tr:last-child td{border-bottom:none}
 <button type="button" class="ab" id="ab-senden">Absenden</button>
 <div class="ab-hinweis" id="ab-hinweis">Wähle oben aus, was für dich passt – dann abschicken.</div>
 <div class="ab-danke" id="ab-danke" hidden><b>Angekommen – danke dir.</b><br>Ich schaue gleich rein und melde mich bei dir.</div>
+<div class="ab-rueckfall" id="ab-rueckfall" hidden>
+<b>Das direkte Senden klappt bei dir gerade nicht.</b> Kein Problem – oft liegt es an einem
+Werbeblocker. <span data-kopiert>Kopier dir einfach den Text hier drunter.</span><br>
+Schick ihn mir per Mail an <a href="mailto:hb@diveiac.com">hb@diveiac.com</a> oder per WhatsApp – ganz wie du magst.
+<div class="ab-rtext" data-text></div>
+</div>
 </div>
 <script>
 (function(){
@@ -176,10 +184,17 @@ tr:last-child td{border-bottom:none}
   document.querySelectorAll('input[name="antwort"]').forEach(function(r){
     r.addEventListener('change',function(){ hinweis.textContent='Alles klar – jetzt nur noch abschicken.'; });
   });
+  // Rueckfall OHNE Entfuehrung: Wir reissen niemandem das Mailprogramm auf (Henrik 24.07.).
+  // Stattdessen: Text sichtbar zeigen, in die Zwischenablage legen, Adresse nennen —
+  // der Nutzer entscheidet selbst, wie er ihn verschickt.
   function rueckfall(t){
-    if(navigator.clipboard) navigator.clipboard.writeText(t).then(function(){},function(){});
-    location.href='mailto:'+mail+'?subject='+encodeURIComponent('Villen-Kampagne: meine Antwort')
-      +'&body='+encodeURIComponent(t);
+    var kasten=$('ab-rueckfall');
+    kasten.hidden=false;
+    kasten.querySelector('[data-text]').textContent=t;
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(
+      function(){ kasten.querySelector('[data-kopiert]').textContent='Der Text liegt schon in deiner Zwischenablage.'; },
+      function(){});
+    kasten.scrollIntoView({behavior:'smooth',block:'center'});
   }
   knopf.addEventListener('click',function(){
     var t=text();
@@ -203,7 +218,7 @@ tr:last-child td{border-bottom:none}
       } else { throw new Error('nicht erfolgreich'); }
     }).catch(function(){
       knopf.disabled=false; knopf.textContent=alt;
-      hinweis.textContent='Direktes Senden klappt gerade nicht – ich öffne dir stattdessen eine Mail.';
+      hinweis.style.display='none';
       rueckfall(t);
     });
   });
