@@ -58,12 +58,11 @@ tr:last-child td{border-bottom:none}
 .ab-label{display:block;font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;margin-bottom:7px}
 .antwort textarea{width:100%;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.5;color:#191C1E;padding:11px 13px;border:1px solid #E0E3E1;border-radius:5px;background:#F4F5F4;resize:vertical}
 .antwort textarea:focus{outline:none;border-color:#C2451A;background:#FFFFFF}
-.ab-reihe{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px}
-.ab{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:14px;font-weight:600;padding:11px 18px;border-radius:5px;border:1px solid #C2451A;background:#C2451A;color:#fff;cursor:pointer}
+.ab{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:15px;font-weight:600;padding:13px 26px;margin-top:14px;border-radius:5px;border:1px solid #C2451A;background:#C2451A;color:#fff;cursor:pointer}
 .ab:hover{filter:brightness(1.08)}
-.ab--ghost{background:#FFFFFF;color:#C2451A}
+.ab:disabled{opacity:.6;cursor:default}
 .ab-hinweis{font-size:13px;color:#5C6468;margin-top:11px;line-height:1.5}
-.ab-vorschau{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;background:#F4F5F4;border:1px solid #E0E3E1;border-radius:5px;padding:12px 14px;margin-top:10px;color:#191C1E}
+.ab-danke{background:#F7E8E1;border-left:3px solid #C2451A;border-radius:4px;padding:14px 16px;margin-top:12px;font-size:14.5px;line-height:1.55;color:#4a3a33}
 @media print{.antwort{display:none}}
 .foot{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;margin-top:24px;padding-top:14px;border-top:1px solid #E0E3E1;font-size:11.5px;color:#5C6468}
 </style></head><body><div class="wrap">
@@ -137,49 +136,56 @@ tr:last-child td{border-bottom:none}
 <div class="wahlen"><label class="wahl"><input type="radio" name="antwort" value="1" data-text="Ja, macht das."><span class="wahl-n">1</span><span class="wahl-txt"><b>Ja, macht das.</b><em>Sprich direkt mit Michl – ich sage ihm Bescheid, dass du dich meldest.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="2" data-text="Ja, aber lass uns vorher kurz telefonieren."><span class="wahl-n">2</span><span class="wahl-txt"><b>Ja, aber lass uns vorher kurz telefonieren.</b><em>Zehn Minuten, dann setze ich es um.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="3" data-text="Nein oder noch nicht."><span class="wahl-n">3</span><span class="wahl-txt"><b>Nein oder noch nicht.</b><em>Ich schreibe dir, was mich davon abhält.</em></span></label></div>
 <label class="ab-label" for="ab-text">Anmerkungen oder Fragen (freiwillig)</label>
 <textarea id="ab-text" rows="3" placeholder="Schreib einfach los – auch „hab da noch eine Frage zu …“ hilft mir."></textarea>
-<div class="ab-reihe">
-<button type="button" class="ab" id="ab-mail">Per E-Mail senden</button>
-
-<button type="button" class="ab ab--ghost" id="ab-copy">Antwort kopieren</button>
-</div>
-<div class="ab-hinweis" id="ab-hinweis">Wähle oben eine Nummer – dann baue ich dir den Antworttext.</div>
-<div class="ab-vorschau" id="ab-vorschau" hidden></div>
+<button type="button" class="ab" id="ab-senden">Absenden</button>
+<div class="ab-hinweis" id="ab-hinweis">Wähle oben aus, was für dich passt – dann abschicken.</div>
+<div class="ab-danke" id="ab-danke" hidden><b>Angekommen – danke dir.</b><br>Ich melde mich heute noch bei dir.</div>
 </div>
 <script>
 (function(){
-  var mail='hb@diveiac.com', wa='';
+  var mail='hb@diveiac.com';
   var $=function(id){return document.getElementById(id)};
+  var knopf=$('ab-senden'), hinweis=$('ab-hinweis'), danke=$('ab-danke');
+  function wahl(){ return document.querySelector('input[name="antwort"]:checked'); }
   function text(){
-    var g=document.querySelector('input[name="antwort"]:checked');
+    var g=wahl(); if(!g) return null;
     var k=($('ab-text').value||'').trim();
-    if(!g) return null;
-    var t='Meine Antwort: '+g.value+' – '+g.getAttribute('data-text');
+    var t='Antwort: '+g.value+' – '+g.getAttribute('data-text');
     if(k) t+='\n\nAnmerkung:\n'+k;
     return t;
   }
-  function frisch(){
-    var t=text(), v=$('ab-vorschau'), h=$('ab-hinweis');
-    if(!t){ v.hidden=true; h.textContent='Wähle oben eine Nummer – dann baue ich dir den Antworttext.'; return; }
-    v.hidden=false; v.textContent=t;
-    h.textContent='Schick es mit einem der Knöpfe – oder kopier den Text und sende ihn, wie du magst.';
-  }
-  document.querySelectorAll('input[name="antwort"]').forEach(function(r){r.addEventListener('change',frisch)});
-  $('ab-text').addEventListener('input',frisch);
-  function ohne(){ $('ab-hinweis').textContent='Bitte wähle zuerst eine Nummer (1, 2 oder 3).'; }
-  $('ab-mail').addEventListener('click',function(){
-    var t=text(); if(!t) return ohne();
+  document.querySelectorAll('input[name="antwort"]').forEach(function(r){
+    r.addEventListener('change',function(){ hinweis.textContent='Alles klar – jetzt nur noch abschicken.'; });
+  });
+  function rueckfall(t){
+    if(navigator.clipboard) navigator.clipboard.writeText(t).then(function(){},function(){});
     location.href='mailto:'+mail+'?subject='+encodeURIComponent('Villen-Kampagne: meine Antwort')
       +'&body='+encodeURIComponent(t);
-  });
-  if(wa) $('ab-wa').addEventListener('click',function(){
-    var t=text(); if(!t) return ohne();
-    window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(t),'_blank');
-  });
-  $('ab-copy').addEventListener('click',function(){
-    var t=text(); if(!t) return ohne();
-    var fertig=function(){ $('ab-hinweis').textContent='Kopiert. Jetzt einfach in Mail oder WhatsApp einfügen.'; };
-    if(navigator.clipboard) navigator.clipboard.writeText(t).then(fertig,fertig);
-    else fertig();
+  }
+  knopf.addEventListener('click',function(){
+    var t=text();
+    if(!t){ hinweis.textContent='Bitte wähle oben zuerst 1, 2 oder 3 aus.'; return; }
+    var alt=knopf.textContent;
+    knopf.disabled=true; knopf.textContent='Wird gesendet …';
+    var g=wahl();
+    fetch('https://formsubmit.co/ajax/'+mail,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        _subject:'Villen-Kampagne: Werners Antwort',
+        _template:'table',
+        'Antwort':g.value+' – '+g.getAttribute('data-text'),
+        'Anmerkung':($('ab-text').value||'').trim()||'(keine)'
+      })
+    }).then(function(r){return r.json()}).then(function(res){
+      if(res && String(res.success)==='true'){
+        knopf.style.display='none'; hinweis.style.display='none';
+        danke.hidden=false; danke.scrollIntoView({behavior:'smooth',block:'center'});
+      } else { throw new Error('nicht erfolgreich'); }
+    }).catch(function(){
+      knopf.disabled=false; knopf.textContent=alt;
+      hinweis.textContent='Direktes Senden klappt gerade nicht – ich öffne dir stattdessen eine Mail.';
+      rueckfall(t);
+    });
   });
 })();
 </script>
