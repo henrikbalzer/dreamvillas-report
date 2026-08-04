@@ -19,6 +19,10 @@ h1{font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.01em;text-wr
 .tv{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:24px;font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .tl{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;margin-top:7px}
 h2{font-size:15px;margin:28px 0 12px;font-weight:700}
+/* Zeitraum-Etikett: steht an JEDEM Zahlenblock, damit Wochen- und Gesamtsicht nie
+   verwechselt werden koennen. */
+.zr{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#C2451A;font-weight:600;margin:0 0 8px}
+.h2zr{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;font-weight:600;margin-left:8px;white-space:nowrap}
 .tblwrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;background:#FFFFFF;border:1px solid #E0E3E1;border-radius:6px;overflow:hidden;font-variant-numeric:tabular-nums}
 th,td{padding:11px 13px;text-align:left;font-size:13.5px;border-bottom:1px solid #E0E3E1}
@@ -46,6 +50,21 @@ table.stat td:first-child{font-family:ui-monospace,"SF Mono","Cascadia Mono","Se
 .cta-h{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#C2451A;font-weight:600;margin-bottom:9px}
 .cta p{font-size:14.5px;color:#191C1E;margin-bottom:14px;max-width:64ch;line-height:1.6}
 .decide{font-size:13.5px;color:#5C6468;border-top:1px solid #E0E3E1;padding-top:12px;line-height:1.55}
+/* --- "Wer macht was" + Mini-Ueberschriften ---
+   ACHTUNG (Fund 04.08.): ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace enthaelt doppelte Anfuehrungszeichen ("SF Mono"). In einem
+   style="..."-Attribut bricht der Wert dort ab — alles danach (uppercase, Farbe, Fettung) fiel
+   still weg. Deshalb stehen diese Stile hier als Klasse und nicht mehr inline. */
+.mini{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;font-weight:600;margin-bottom:8px}
+.kasten{background:#F4F5F4;border:1px solid #E0E3E1;border-radius:5px;padding:14px 16px;margin-bottom:14px}
+.kasten p{font-size:14px;margin:0}
+.wmw{background:none;border:none;border-radius:0;margin:0}
+.wmw td{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:14px;line-height:1.5;padding:11px 0;border-bottom:none;border-top:1px solid #E0E3E1;vertical-align:top}
+.wmw tr:first-child td{border-top:none;padding-top:2px}
+.wmw td.wer{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:#191C1E;white-space:nowrap;width:1%;padding-right:14px}
+.wmw td.wer.du{color:#C2451A}
+.wmw ul{margin:0;padding-left:17px}
+.wmw li{margin-bottom:6px}
+.wmw li:last-child{margin-bottom:0}
 /* --- Wer reagiert: drei kompakte Karten --- */
 .wr{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
 @media(max-width:720px){.wr{grid-template-columns:1fr}}
@@ -86,69 +105,83 @@ table.stat td:first-child{font-family:ui-monospace,"SF Mono","Cascadia Mono","Se
 .foot{font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;margin-top:24px;padding-top:14px;border-top:1px solid #E0E3E1;font-size:11.5px;color:#5C6468}
 </style></head><body><div class="wrap">
 
-<header><span class="brand">DreamVillas Cape Coral · Kampagnen-Report</span><span class="stand">seit dem Start · Stand 27.07.2026</span></header>
+<header><span class="brand">DreamVillas Cape Coral · Kampagnen-Report</span><span class="stand">28. Juli – 3. August · Stand 04.08.2026</span></header>
 <div class="kopf">
 <h1>Deine Villen-Kampagne: die Zahlen</h1>
-<p>Hi Werner, hier die Ergebnisse deiner Kampagne seit dem Start am 16. Juli – kurz und ehrlich: was lief, was die Anzeigen gekostet haben und was reingekommen ist.</p>
-<div class="rahmen"><span>Zeitraum: seit dem Start</span><span>Zielgruppe: USA 30–65</span><span>Budget: 10 €/Tag</span></div>
+<p>Hi Werner, hier die vergangene Woche (28. Juli – 3. August) – kurz und ehrlich: was lief, was die Anzeigen gekostet haben und was reingekommen ist. Die Gesamtzahlen seit dem Start stehen weiter unten.</p>
+<div class="rahmen"><span>Zeitraum: 28. Juli – 3. August</span><span>Zielgruppe: USA 30–65</span><span>Budget: 10 €/Tag</span></div>
 </div>
+<div class="zr">Diese Woche · 28. Juli – 3. August</div>
 <div class="grid">
-<div class="tile"><div class="tv" style="color:#C2451A">103,21 €</div><div class="tl">Eingesetztes Budget</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">4.887</div><div class="tl">Menschen erreicht</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">315</div><div class="tl">Klicks auf die Anzeige</div></div>
+<div class="tile"><div class="tv" style="color:#C2451A">72,62 €</div><div class="tl">Eingesetztes Budget</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">2.464</div><div class="tl">Menschen erreicht</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">158</div><div class="tl">Klicks auf die Anzeige</div></div>
 <div class="tile"><div class="tv" style="color:#C2451A">0</div><div class="tl">Anfragen</div></div>
 </div>
 <div class="grid">
-<div class="tile"><div class="tv" style="color:#191C1E">7.062</div><div class="tl">Ausspielungen</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">295</div><div class="tl">Auf der Seite angekommen</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">0,33 €</div><div class="tl">Klickpreis (Ø)</div></div>
-<div class="tile"><div class="tv" style="color:#191C1E">4,46 %</div><div class="tl">Klickrate</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">4.070</div><div class="tl">Ausspielungen</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">138</div><div class="tl">Auf der Seite angekommen</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">0,46 €</div><div class="tl">Klickpreis (Ø)</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">3,88 %</div><div class="tl">Klickrate</div></div>
 </div>
-<h2>Welche Anzeige zieht?</h2>
+<h2>Welche Anzeige zieht? <span class="h2zr">Diese Woche · 28. Juli – 3. August</span></h2>
 <div class="tblwrap"><table><tr><th>Anzeige</th><th>Ausspielungen</th><th>Klicks</th><th>Klickrate</th><th>Ausgegeben</th></tr>
-<tr><td class="an">Familien</td><td>6.124</td><td>268</td><td>4,38 %</td><td><div class="barw"><div class="bar" style="width:100%"></div></div>86,66 €</td></tr><tr><td class="an">Bootsfahrer</td><td>631</td><td>36</td><td>5,71 %</td><td><div class="barw"><div class="bar" style="width:12%"></div></div>10,94 €</td></tr><tr><td class="an">Luxus (Bequia)</td><td>306</td><td>11</td><td>3,59 %</td><td><div class="barw"><div class="bar" style="width:6%"></div></div>5,60 €</td></tr>
+<tr><td class="an">Familien</td><td>3.688</td><td>139</td><td>3,77 %</td><td><div class="barw"><div class="bar" style="width:100%"></div></div>63,07 €</td></tr><tr><td class="an">Bootsfahrer</td><td>280</td><td>12</td><td>4,29 %</td><td><div class="barw"><div class="bar" style="width:11%"></div></div>7,22 €</td></tr><tr><td class="an">Luxus (Bequia)</td><td>102</td><td>7</td><td>6,86 %</td><td><div class="barw"><div class="bar" style="width:3%"></div></div>2,33 €</td></tr>
 </table></div>
-<div class="note"><b>Einordnung.</b> Die Kampagne läuft seit dem 16. Juli, also 11 Tage. Die erste Zeit ist bei Facebook <b>Lernphase</b> – das System testet, wem es die Anzeigen am besten zeigt. Was jetzt schon belastbar ist: <b>Ältere reagieren deutlich stärker.</b> Über 55 klickt rund zweieinhalbmal so oft wie unter 45 – das ist bei diesen Zahlen kein Zufall mehr. Unter 45 kostet uns jeder Klick das 1,7-fache. Daraus mache ich nächste Woche einen konkreten Vorschlag zur Zielgruppe. Noch <i>nicht</i> belastbar ist alles, was einzelne Tage betrifft – dafür sind die Zahlen zu klein.</div>
-<h2>Wer reagiert auf deine Anzeigen?</h2>
-<div class="wr">
-<div class="wr-karte"><div class="wr-titel">Alter</div><table class="wr-tab"><tr><th>Altersgruppe</th><th>Klicks</th><th>Klickrate</th></tr><tr><td class="an" style="font-weight:700;color:#C2451A">65 und älter</td><td>163</td><td style="font-weight:700;color:#C2451A">5,98 %</td></tr><tr><td class="an">55 bis 64</td><td>101</td><td>4,23 %</td></tr><tr><td class="an">45 bis 54</td><td>37</td><td>3,00 %</td></tr><tr><td class="an">unter 45</td><td>14</td><td>1,97 %</td></tr></table><p class="wr-satz">Über 55 klickt rund zweieinhalbmal so oft wie unter 45. Das ist bei diesen Zahlen kein Zufall mehr.</p></div>
-
-<div class="wr-karte"><div class="wr-titel">Womit sie schauen</div><table class="wr-tab"><tr><th>Gerät</th><th>Klicks</th><th>Klickrate</th></tr><tr><td class="an" style="font-weight:700;color:#C2451A">Handy</td><td>252</td><td style="font-weight:700;color:#C2451A">4,67 %</td></tr><tr><td class="an">Tablet</td><td>40</td><td>5,63 %</td></tr><tr><td class="an">Computer</td><td>21</td><td>2,30 %</td></tr></table><p class="wr-satz">Rund 87 % der Anzeigen werden am Handy oder Tablet gesehen – und dort wird auch deutlich öfter geklickt als am Computer.</p></div>
+<div class="note"><b>Einordnung.</b> Die Kampagne läuft seit dem 16. Juli, also 19 Tage – lang genug, dass die Zahlen etwas bedeuten. Belastbar ist: <b>Ältere reagieren deutlich stärker.</b> Über 55 klickt rund zweieinhalbmal so oft wie unter 45 – das ist bei diesen Zahlen kein Zufall mehr. Unter 45 kostet uns jeder Klick das Doppelte. Was ich daraus vorschlage, steht unten unter „Mein Vorschlag“. Noch <i>nicht</i> belastbar ist alles, was einzelne Tage betrifft – dafür sind die Zahlen zu klein.</div>
+<h2>Und insgesamt, seit dem Start? <span class="h2zr">16. Juli – 3. August</span></h2>
+<div class="grid">
+<div class="tile"><div class="tv" style="color:#C2451A">179,01 €</div><div class="tl">Bisher ausgegeben</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">6.948</div><div class="tl">Menschen erreicht</div></div>
+<div class="tile"><div class="tv" style="color:#191C1E">441</div><div class="tl">Auf der Seite angekommen</div></div>
+<div class="tile"><div class="tv" style="color:#C2451A">0</div><div class="tl">Anfragen insgesamt</div></div>
 </div>
-<p class="wr-offen"><b>Und was ich noch nicht sagen kann:</b> <b>Woher die Leute kommen, kann ich nicht seriös sagen.</b> Facebook ordnet nur rund 54 % der Klicks überhaupt einem Bundesstaat zu – bei der anderen Hälfte steht schlicht nichts. Aus der einen Hälfte auf alle zu schließen, wäre geraten, deshalb lasse ich es weg. Zwischen Frauen und Männern ist <b>kein Unterschied</b> nachweisbar – beide reagieren gleich. Einzelne Bundesstaaten sage ich bewusst nicht – dafür sind die Zahlen je Staat noch zu klein.</p>
-<h2>Wo genau verlieren wir sie?</h2>
+<p class="wr-hinweis" style="margin-top:10px">Die 441 Seitenaufrufe kommen von <b>337 verschiedenen Menschen</b> – manche haben mehrfach geklickt. Das ist die Zahl, auf die es ankommt, wenn man fragt, ob genug Leute da waren.</p>
+<div class="note" style="background:#fff;border-left-color:#5C6468"><b>Was das noch kostet.</b> Die Kampagne läuft bis zum <b>31. August</b>. Bei bisher 9,42 € am Tag kommen bis dahin noch rund 263,80 € dazu – zusammen etwa <b>442,81 €</b>. Dein Limit im Werbekonto liegt bei 600 €, da ist also Luft. Ich fahre das Budget bewusst nicht hoch, solange die Seite keine Anfragen aufnimmt.</div>
+<h2>Wer reagiert auf deine Anzeigen? <span class="h2zr">Seit dem Start · 16. Juli – 3. August</span></h2>
+<p class="wr-hinweis">Diese drei Tabellen rechne ich bewusst über die <b>ganze Laufzeit</b>, nicht über die einzelne Woche – eine Woche allein ist zu klein, um daraus etwas ableiten zu können. Die Klickzahlen hier sind deshalb höher als oben.</p>
+<div class="wr">
+<div class="wr-karte"><div class="wr-titel">Alter</div><table class="wr-tab"><tr><th>Altersgruppe</th><th>Klicks</th><th>Klickrate</th></tr><tr><td class="an" style="font-weight:700;color:#C2451A">65 und älter</td><td>264</td><td style="font-weight:700;color:#C2451A">5,97 %</td></tr><tr><td class="an">55 bis 64</td><td>141</td><td>3,73 %</td></tr><tr><td class="an">45 bis 54</td><td>56</td><td>2,82 %</td></tr><tr><td class="an">unter 45</td><td>21</td><td>1,85 %</td></tr></table><p class="wr-satz">Über 55 klickt rund zweieinhalbmal so oft wie unter 45. Das ist bei diesen Zahlen kein Zufall mehr.</p></div>
+
+<div class="wr-karte"><div class="wr-titel">Womit sie schauen</div><table class="wr-tab"><tr><th>Gerät</th><th>Klicks</th><th>Klickrate</th></tr><tr><td class="an" style="font-weight:700;color:#C2451A">Handy</td><td>391</td><td style="font-weight:700;color:#C2451A">4,36 %</td></tr><tr><td class="an">Tablet</td><td>57</td><td>6,04 %</td></tr><tr><td class="an">Computer</td><td>30</td><td>2,22 %</td></tr></table><p class="wr-satz">Rund 88 % der Anzeigen werden am Handy oder Tablet gesehen – und dort wird auch deutlich öfter geklickt als am Computer.</p></div>
+</div>
+<p class="wr-offen"><b>Und was ich noch nicht sagen kann:</b> <b>Woher die Leute kommen, kann ich nicht seriös sagen.</b> Facebook ordnet nur rund 53 % der Klicks überhaupt einem Bundesstaat zu – bei der anderen Hälfte steht schlicht nichts. Aus der einen Hälfte auf alle zu schließen, wäre geraten, deshalb lasse ich es weg. Einzelne Bundesstaaten sage ich bewusst nicht – dafür sind die Zahlen je Staat noch zu klein.</p>
+<h2>Wo genau verlieren wir sie? <span class="h2zr">Seit dem Start · 16. Juli – 3. August</span></h2>
 <div class="conv"><div class="conv-txt">
-<p><b>4.887 Menschen erreicht → 315 haben geklickt → 295 sind auf der Seite angekommen → 0 haben angefragt.</b> Bis zum vorletzten Schritt läuft alles: 4,46 % Klickrate ist für diese Branche ein guter Wert, 0,33 € je Klick ist günstig, und fast alle Klicks kommen auch wirklich auf der Seite an. Der letzte Schritt findet nicht statt.</p>
+<p><b>6.948 Menschen erreicht → 482 haben geklickt → 441 sind auf der Seite angekommen → 0 haben angefragt.</b> Bis zum vorletzten Schritt läuft alles: 4,26 % Klickrate ist für diese Branche ein guter Wert, 0,37 € je Klick ist günstig, und fast alle Klicks kommen auch wirklich auf der Seite an. Der letzte Schritt findet nicht statt.</p>
 <div class="flow">Anzeige&nbsp;→&nbsp;Startseite&nbsp;→&nbsp;Villa-Seite&nbsp;→&nbsp;„Book&nbsp;now“&nbsp;→&nbsp;fremdes&nbsp;Buchungssystem</div>
-<p style="font-size:14px;color:#5C6468;margin:0">Diese Strecke bin ich diese Woche Schritt für Schritt abgegangen. Was ich dabei gefunden habe und was ich vorschlage, steht unten unter „Mein Vorschlag“.</p>
+<p style="font-size:14px;color:#5C6468;margin:0">Diese Strecke bin ich Schritt für Schritt abgegangen, auf dem Rechner und auf dem Handy. Was ich dabei gefunden habe und was ich vorschlage, steht unten unter „Mein Vorschlag“.</p>
 </div></div>
 
-<h2>Was die 0 bedeutet</h2>
+<h2>Was die 0 bedeutet <span class="h2zr">Seit dem Start · 16. Juli – 3. August</span></h2>
 <div class="note" style="background:#fff;border-left-color:#5C6468">
-<p style="margin-bottom:9px">Auf der Seite waren <b>229 verschiedene Menschen</b>. Läuft so eine Seite normal, wären daraus <b>etwa 2 bis 5 Anfragen</b> geworden. Es kam keine. Das beweist nicht, dass die Seite nichts taugt – aber mit Zufall lässt es sich nicht mehr erklären.</p>
-<p style="margin:0">Zur Einordnung: Damit sich eine rabattierte Woche in der La Favorita rechnet, brauchen wir rund 2.300 Besucher. Wir sind bei 295. Deshalb jetzt kein Alarm – aber jetzt ist der Moment, die undichten Stellen zu schließen, bevor mehr Geld durchläuft.</p>
+<p style="margin-bottom:9px">Auf der Seite waren <b>337 verschiedene Menschen</b>. Läuft so eine Seite normal, wären daraus <b>etwa 3 bis 7 Anfragen</b> geworden. Es kam keine. Das beweist nicht, dass die Seite nichts taugt – aber mit Zufall lässt es sich nicht mehr erklären.</p>
+<p style="margin:0">Zur Einordnung: Damit sich eine rabattierte Woche in der La Favorita rechnet, brauchen wir rund 2.000 Besucher. Wir sind bei 441. Deshalb jetzt kein Alarm – aber jetzt ist der Moment, die undichten Stellen zu schließen, bevor mehr Geld durchläuft.</p>
 </div>
 <h2>Empfehlung &amp; nächster Schritt</h2>
 <div class="cta">
 <div class="cta-h">Mein Vorschlag</div>
-<p style="margin-bottom:12px"><b>Das Problem liegt nicht bei den Anzeigen, sondern auf der Seite dahinter.</b> Die Leute kommen an – 94 % der Klicks landen wirklich auf der Seite, und sie ist in einer halben Sekunde da. Es liegt also weder an der Technik noch an der Ladezeit.</p>
+<p style="margin-bottom:12px"><b>Beim Anfragen ist die Null hart geworden.</b> Inzwischen waren <b>337 verschiedene Menschen</b> auf deiner Seite, keiner hat das Formular abgeschickt – bei 229 war das noch möglicher Zufall, jetzt nicht mehr.</p>
 
-<p style="margin-bottom:12px"><b>Woran es liegt: Wer sich melden will, findet keinen einfachen Weg dahin.</b> Ich bin die Strecke vom Klick bis zur Anfrage Schritt für Schritt durchgegangen – die Startseite, die Villa-Seiten, den Weg ins Buchungssystem, auf dem Rechner und auf dem Handy. An mehreren Stellen verliert man dabei den Faden, und rund 87 % deiner Anzeigen werden auf dem Handy gesehen, wo das besonders ins Gewicht fällt. Was mir dabei aufgefallen ist, gehe ich am Telefon mit dir durch – das ist in zehn Minuten erzählt und am Bildschirm einfacher zu zeigen als zu schreiben.</p>
+<p style="margin-bottom:14px"><b>Buchungen sehe ich dabei nicht.</b> Im Buchungssystem läuft keine Messung – wer über die Anzeige kommt und direkt bucht, taucht bei mir nirgends auf.</p>
 
-<p style="margin-bottom:12px"><b>Ein Hinweis darauf, dass die Leute durchaus wollen:</b> Drei Besucher haben am Samstag, 25. Juli auf deine Telefonnummer oder Mailadresse getippt. Ob daraus ein Anruf wurde, sieht die Messung nicht – <b>schau bitte nach, ob an dem Tag jemand angerufen hat.</b></p>
-<p style="margin-bottom:12px"><b>Was jetzt zu tun ist:</b> Deine Website muss an ein paar Stellen anders aufgebaut sein, damit Interessenten dort wirklich ankommen und anfragen können. Es geht nicht um ein neues Design und nicht um viel Arbeit – es sind gezielte Änderungen an wenigen Stellen. <b>Lass uns zehn Minuten telefonieren</b>, dann gehe ich sie mit dir durch und du weißt, was zu veranlassen ist.</p>
+<div class="kasten">
+<div class="mini">Wer macht was – bis zum nächsten Bericht</div>
+<table class="wmw">
+<tr><td class="wer">Ich</td><td><ul><li>Ich hänge die Anzeigen <b>direkt auf die passende Villa-Seite</b> um – bisher landen alle auf der Startseite.</li><li>Ich stelle das <b>Werbeziel auf „Seitenaufrufe“</b> um – auf einer Seite ohne Formular kann Facebook Anfragen nicht lernen.</li></ul></td></tr>
+<tr><td class="wer du">Du</td><td><ul><li><b>Drei Besucher haben am Samstag, 25. Juli deine Telefonnummer oder Mailadresse angetippt.</b> Ob sich davon jemand gemeldet hat, siehst nur du.</li><li><b>Frag nach, ob sich auf deiner Buchungsseite ein Facebook-Pixel hinterlegen lässt</b> – dann sehe ich Buchungen aus den Anzeigen. Heute sehe ich sie nicht.</li></ul></td></tr>
 
-<div style="background:#F4F5F4;border:1px solid #E0E3E1;border-radius:5px;padding:14px 16px;margin-top:4px">
-<div style="font-family:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Menlo,Consolas,monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#5C6468;font-weight:600;margin-bottom:8px">Und warum ich jetzt NICHT mehr mache</div>
-<p style="font-size:14px;margin:0">Mehr Budget wäre rausgeworfen, solange die Seite Interessenten nicht auffängt – erst dicht machen, dann aufdrehen. An den Anzeigen fasse ich nichts an: 4,46 % Klickrate und 0,33 € je Klick sind gute Werte. Und ich ändere bewusst <i>wenig</i>, damit die Zahlen nächste Woche noch etwas bedeuten.</p>
+</table>
 </div>
 
-<p style="font-size:13.5px;color:#5C6468;margin-top:12px">Zwei Dinge kannst nur du klären: ob im Postfach <span style="white-space:nowrap">villas@wernerlau.<u>org</u></span> Anfragen liegen – die Adresse steht dort, wo dein Angebot zum Anschreiben auffordert, und läuft als einzige über ein anderes Mailsystem. Und ob deine Formulare überhaupt Mails zustellen; dazu die Bitte in meiner Mail. Unabhängig davon: Die Links „Imprint" und „Privacy" im Fuß deiner Seiten führen ins Leere – das solltest du reparieren lassen.</p>
+<p style="margin:0 0 12px"><b>Eine Entscheidung brauche ich von dir:</b> Über 55 klickt zweieinhalbmal so oft wie unter 45. Hebe ich die Altersgrenze von 30 auf 55, holen wir für dasselbe Geld rund 38 Klicks mehr. Das ist eine Obergrenze, keine Zusage – und Priorität 2, denn mehr Besucher auf einer Seite ohne Anfrageweg ergeben keine Anfrage.</p><div class="kasten" style="margin-bottom:0">
+<p>Mehr Budget wäre rausgeworfen, solange die Seite Interessenten nicht auffängt – erst dicht machen, dann aufdrehen. Dazu ist der Einkauf teurer geworden: 0,46 € je Klick statt 0,30 € in der ersten Woche. An den Anzeigen selbst fasse ich nichts an, 3,88 % Klickrate ist weiter ein guter Wert.</p>
+</div>
 <div class="decide">Klick unten einfach an, was für dich passt – der Antworttext baut sich von selbst, du musst ihn nur abschicken.</div>
 </div>
 <div class="antwort">
-<div class="cta-h">Deine Antwort</div>
-<div class="wahlen"><label class="wahl"><input type="radio" name="antwort" value="1" data-text="Ruf mich an, dann besprechen wir es."><span class="wahl-n">1</span><span class="wahl-txt"><b>Ruf mich an, dann besprechen wir es.</b><em>Zehn Minuten. Sag mir gern gleich, wann es dir passt.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="2" data-text="Ich kümmere mich um die Website."><span class="wahl-n">2</span><span class="wahl-txt"><b>Ich kümmere mich um die Website.</b><em>Sag mir Bescheid, wenn es umgesetzt ist – dann messe ich nach.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="3" data-text="Nein oder noch nicht."><span class="wahl-n">3</span><span class="wahl-txt"><b>Nein oder noch nicht.</b><em>Ich schreibe dir, was mich davon abhält.</em></span></label></div>
+<div class="cta-h">Und wie machen wir weiter?</div>
+<div class="wahlen"><label class="wahl"><input type="radio" name="antwort" value="1" data-text="Zielgruppe auf 55+ verengen – mach das."><span class="wahl-n">1</span><span class="wahl-txt"><b>Zielgruppe auf 55+ verengen – mach das.</b><em>Dauert fünf Minuten. Ich melde mich, wenn es läuft.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="2" data-text="Erst abwarten, was das Umhängen bringt."><span class="wahl-n">2</span><span class="wahl-txt"><b>Erst abwarten, was das Umhängen bringt.</b><em>Ich messe nach und melde mich im nächsten Bericht.</em></span></label><label class="wahl"><input type="radio" name="antwort" value="3" data-text="Etwas anderes – ich schreibe es dir unten."><span class="wahl-n">3</span><span class="wahl-txt"><b>Etwas anderes – ich schreibe es dir unten.</b><em>Frag oder sag, was du willst. Ich melde mich darauf.</em></span></label></div>
 <label class="ab-label" for="ab-text">Anmerkungen oder Fragen (freiwillig)</label>
 <textarea id="ab-text" rows="3" placeholder="Schreib einfach los – auch „hab da noch eine Frage zu …“ hilft mir."></textarea>
 <button type="button" class="ab" id="ab-senden">Absenden</button>
